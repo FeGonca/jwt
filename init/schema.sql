@@ -1,0 +1,6 @@
+CREATE TABELA IF EXISTS 'users' (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    useraname TEXT NOT NULL,
+    password TEXT NOT NULL,
+    balance FLOAT NOT NULL
+);
