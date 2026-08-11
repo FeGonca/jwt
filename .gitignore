@@ -1,6 +1,5 @@
 .venv/
 .vscode/
-example
 
 **/__pycache__
 .pytest_cache
