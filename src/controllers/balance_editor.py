@@ -1,6 +1,7 @@
+from src.controllers.interfaces.balance_editor import BalanceEditorInterface
 from src.models.repositories.user_repository import UserRepository
 
-class BalanceEditor:
+class BalanceEditor(BalanceEditorInterface):
     def __init__(self, user_repository: UserRepository) -> None:
         self.__user_repository = user_repository
 
