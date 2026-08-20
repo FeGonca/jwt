@@ -1,9 +1,10 @@
 from src.controllers.interfaces.balance_editor import BalanceEditorInterface
+from src.errors.types.http_bad_request import HttpBadRequestError
 from src.views.http_types.http_request import HttpRequest
 from src.views.http_types.http_reponse import HttpResponse
 from .interfaces.view_interfaces import ViewInterface
 
-class BalanceEditorView(BalanceEditorInterface):
+class BalanceEditorView(ViewInterface):
     def __init__(self, controller: BalanceEditorInterface) -> None:
         self.__controller = controller
 
@@ -23,4 +24,4 @@ class BalanceEditorView(BalanceEditorInterface):
             or not user_id
             or not isinstance(new_balance, float)
             or int(header_user_id) != int(user_id)
-        ): raise Exception("Invalid Input")
+        ): raise HttpBadRequestError("Invalid Input")
